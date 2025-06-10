@@ -66,5 +66,10 @@ require("pckr").add({
   {
     "akinsho/toggleterm.nvim",
     config = require("plugins.configs.toggleterm")
+  },
+  {
+    "folke/noice.nvim",
+    requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
+    config = require("plugins.configs.noice")
   }
 })
