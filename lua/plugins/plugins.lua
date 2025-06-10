@@ -71,5 +71,10 @@ require("pckr").add({
     "folke/noice.nvim",
     requires = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify" },
     config = require("plugins.configs.noice")
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    config = require("plugins.configs.indent-blankline")
   }
 })
