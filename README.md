@@ -34,7 +34,7 @@ lua/
 1. **Clone this repo into your Neovim config directory:**
 
    ```sh
-   git clone <this-repo-url> ~/.config/nvim
+   git clone https://github.com/MihneaTs1/nvim-dotfiles ~/.config/nvim
    ```
 
 2. **Open Neovim:**
