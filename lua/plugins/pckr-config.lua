@@ -1,6 +1,3 @@
--- MihneaTs1's Neovim Config Files
--- lua/pckr-config.lua
-
 local function bootstrap_pckr()
   local pckr_path = vim.fn.stdpath("data") .. "/pckr/pckr.nvim"
 
@@ -9,7 +6,7 @@ local function bootstrap_pckr()
       'git',
       'clone',
       "--filter=blob:none",
-      'https://github.com/lewis6991/pckr.nvim',
+      "https://github.com/lewis6991/pckr.nvim",
       pckr_path
     })
   end
@@ -19,4 +16,4 @@ end
 
 bootstrap_pckr()
 
-require("plugins")
+require("plugins/plugins")
