@@ -1,6 +1,7 @@
 -- MihneaTs1's Neovim Config Files
--- init.lua
+-- Entrypoint for Neovim configuration
 
-require("plugins/pckr-config")
-require("config/options")
-require("config/keymaps")
+require("plugins.pckr-config")
+require("config.options")
+require("config.keymaps")
+-- Add more config files below as needed

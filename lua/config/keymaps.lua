@@ -1,13 +1,5 @@
 local keymap = vim.keymap
 
-keymap.set('n', "<C-n>", function()
-  vim.cmd("Neotree toggle")
-end, { noremap = false, silent = true })
-
-keymap.set('n', "<D-p>", function()
-  vim.cmd("Telescope fd")
-end, { noremap = false, silent = true })
-
-keymap.set('n', "<D-S-p>", function()
-  vim.cmd("Telescope")
-end, { noremap = false, silent = true })
+require("config.keymap_neotree")(keymap)
+require("config.keymap_telescope")(keymap)
+require("config.keymap_toggleterm")(keymap)

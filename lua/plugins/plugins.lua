@@ -1,99 +1,70 @@
 require("pckr").add({
   {
     "windwp/nvim-autopairs",
-    config = function()
-      require("nvim-autopairs").setup()
-    end
+    config = require("plugins.configs.nvim-autopairs")
   },
   {
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        sync_install = true,
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true, disable = { 'c' } }
-      })
-    end
+    config = require("plugins.configs.nvim-treesitter")
   },
   {
     "nvim-lualine/lualine.nvim",
     requires = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("lualine").setup({
-        options = { globalstatus = true },
-        winbar = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {"filename"},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {}
-        },
-        inactive_winbar = {
-          lualine_a = {},
-          lualine_b = {},
-          lualine_c = {"filename"},
-          lualine_x = {},
-          lualine_y = {},
-          lualine_z = {}
-        }
-        -- tabline = {
-        --   lualine_a = {},
-        --   lualine_b = {"branch"},
-        --   lualine_c = {"filename"},
-        --   lualine_x = {},
-        --   lualine_y = {},
-        --   lualine_z = {}
-        -- }
-      })
-    end
+    config = require("plugins.configs.lualine")
   },
   {
     "tiagovla/scope.nvim",
-    config = function()
-      require("scope").setup()
-    end
+    config = require("plugins.configs.scope")
   },
   {
     "akinsho/bufferline.nvim",
     requires = { "nvim-tree/nvim-web-devicons" },
-    config = function()
-      require("bufferline").setup({
-        options = {
-          mode = "tabs",
-          hover = { enabled = true },
-          offsets = {
-            {
-              filetype = "neo-tree",
-              text = "File Explorer",
-              highlight = "Directory",
-            }
-          }
-        },
-      })
-    end
+    config = require("plugins.configs.bufferline")
   },
   {
     "folke/tokyonight.nvim",
-    config = function()
-      vim.cmd("colorscheme tokyonight-night")
-    end
+    config = require("plugins.configs.tokyonight")
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
-    requires = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" }
+    requires = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons", "MunifTanjim/nui.nvim" },
+    config = require("plugins.configs.neo-tree")
   },
   {
     "nvim-telescope/telescope.nvim",
     requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("telescope").setup({
-        pickers = {
-          colorscheme = { enable_preview = true }
-        }
-      })
-    end
+    config = require("plugins.configs.telescope")
+  },
+  {
+    "williamboman/mason.nvim",
+    config = require("plugins.configs.mason")
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    requires = { "williamboman/mason.nvim" },
+    config = require("plugins.configs.mason-lspconfig")
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = require("plugins.configs.lspconfig")
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    requires = { "hrsh7th/cmp-nvim-lsp", "L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip" },
+    config = require("plugins.configs.cmp")
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp"
+  },
+  {
+    "L3MON4D3/LuaSnip"
+  },
+  {
+    "saadparwaiz1/cmp_luasnip"
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    config = require("plugins.configs.toggleterm")
   }
 })
