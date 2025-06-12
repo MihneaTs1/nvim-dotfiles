@@ -94,5 +94,11 @@ require("pckr").add({
     main = "ibl",
     event = "BufReadPre",
     config = require("plugins.configs.indent-blankline")
+  },
+  {
+    "xeluxee/competitest.nvim",
+    requires = { "MunifTanjim/nui.nvim" },
+    event = "VeryLazy",
+    config = require("plugins.configs.competitest")
   }
 })
